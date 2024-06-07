@@ -1,0 +1,4 @@
+.img/*
+.package-lock-json
+.package.json
+.tailwinf.config.js

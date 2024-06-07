@@ -1,0 +1,695 @@
+
+<!-- Tailwind v3 / ecran 13"  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />	
+	<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+  />
+
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+  <!-- Link to the Tailwind config, only possible in html  doc because I imported CDN-->
+	<script> 
+
+  // Effet slider //  
+		tailwind.config = {
+      theme: {
+        extend: {
+         animation: { 'test': 'wiggle 14s ease-in-out infinite'},
+          keyframes: {
+            wiggle: {
+            '0%': { transform: 'translateX(0%)' },
+              '50%': { transform: 'translateX(-50%)' },
+              '100%': { transform: 'translateX(-100%)' },
+            },
+          },
+        },
+      },
+      plugins: [],
+    } // 
+	</script> 
+
+
+	<title> Travel</title>
+</head>
+<body>
+	<main class="max-h-screen">
+    <div class="navbar flex justify-center bg-black items-center h-12 uppercase text-white md:w-50">	
+         <p class="pr-4 relative right-1/4">inspiration</p>
+     	   <p class="pr-4 relative right-1/4">voyage</p>
+     	   <p class="pr-4 relative right-1/4">destination</p>
+
+      <div class="relative left-1/4">  <!-- 1/4 = 25% de la largeur de la page sur Tailwind -->
+        <i class="fab fa-facebook-f pr-4"></i>
+        <i class="fab fa-instagram pr-4"></i>
+        <i class="fab fa-twitter pr-4"></i>  
+        <i class="fab fa-pinterest pr-4"></i>
+        <i class="fab fa-github-alt pr-4"></i>
+      </div>
+    </div>
+
+
+    <!-- Menu de navigation + logo -->
+    <nav class="flex justify-center p-8">
+      <img src="img/logo.png" alt="logo" class="relative right-32 mx-12" />
+      <ul class="flex relative top-8">	
+      	<div class="subnav flex float-left overflow-hidden group"><!-- Group = classe dans l'element parent pour faire un hoover -->	
+    	   <li class="pr-12">
+          <button class="hover:text-stone-400">
+            Accueil
+               <i class="fa fa-caret-down mx-1"></i>
+          </bouton>
+        </li>
+    		<div class="group-hover:flex hidden absolute flex-col mt-7"> <!-- group-hoover assigné à l'enfant qui affichera le sous menu -->
+     		  <li class="hover:text-stone-400 transition-color duration-300">
+            <a href="#" class=" group-hover:visible float-left no-underline">Company</a>
+          </li>
+      		<li class="hover:text-stone-400 transition-color duration-300">
+            <a href="#" class=" group-hover:visible float-left no-underline">Team</a>
+          </li>
+      		<li class="hover:text-stone-400 transition-color duration-300">
+            <a href="#" class=" group-hover:visible float-left no-underline">Careers</a>
+          </li>
+        </div>
+    </div>
+
+
+
+    <div class="subnav flex float-left overflow-hidden group">			
+    	<li class="pr-12">
+        <button class="hover:text-stone-400">
+          Destination
+          <i class="fa fa-caret-down mx-1"></i>
+        </bouton>
+      </li>
+    	<div class="group-hover:flex hidden absolute flex-col mt-7"> <!-- Hide the subnav content -->
+ 			 	<li class="hover:text-stone-400 transition-color duration-300">
+               <a href="#" class=" group-hover:visible float-left no-underline">Company</a>
+            </li>
+  			 <li class="hover:text-stone-400 transition-color duration-300">
+               <a href="#" class=" group-hover:visible float-left no-underline">Team</a>
+         </li>
+  			<li class="hover:text-stone-400 transition-color duration-300">
+               <a href="#" class=" group-hover:visible float-left no-underline">Careers</a>
+        </li>
+      </div>
+    </div>
+
+
+    <div class="subnav flex float-left overflow-hidden group">			
+    	<li class="pr-12"><button class="hover:text-stone-400">Theme<i class="fa fa-caret-down mx-2"></i></bouton></li>
+    		<div class="group-hover:flex hidden absolute flex-col mt-7"> <!-- Hide the subnav content -->
+     			<li class="hover:text-stone-400 transition-color duration-300">
+               <a href="#" class=" group-hover:visible float-left no-underline">Company</a>
+          </li>
+      		<li class="hover:text-stone-400 transition-color duration-300">
+               <a href="#" class=" group-hover:visible float-left no-underline">Team</a>
+          </li>
+      		<li class="hover:text-stone-400 transition-color duration-300">
+               <a href="#" class=" group-hover:visible float-left no-underline">Careers</a>
+          </li>
+      </div>
+    </div>
+
+    <div class="subnav flex float-left overflow-hidden group">			
+    	<li class="pr-12">
+        <button class="hover:text-stone-400">
+          Contact
+          <i class="fa fa-caret-down mx-1"></i>
+        </bouton>
+      </li>
+  		<div class="group-hover:flex hidden absolute flex-col mt-7"> <!-- Hide the subnav content -->
+ 			<li class="hover:text-stone-400 transition-color duration-300">
+            <a href="#" class=" group-hover:visible float-left no-underline">Company</a>
+         </li>
+  			<li class="hover:text-stone-400 transition-color duration-300">
+            <a href="#" class=" group-hover:visible float-left no-underline">Team</a>
+        </li>
+  			<li class="hover:text-stone-400 transition-color duration-300">
+            <a href="#" class=" group-hover:visible float-left no-underline">Careers</a>
+        </li>
+        </div>
+      </div>
+
+
+
+    <div class="subnav flex float-left overflow-hidden group">	<!-- Navbar -->		
+    	<li class="pr-12">
+        <button class="hover:text-stone-400">
+          A propos
+          <i class="fa fa-caret-down mx-1"></i>
+        </bouton>
+      </li>
+    	<div class="group-hover:flex hidden absolute flex-col mt-7"> <!-- Hide the subnav content -->
+     		<li class="hover:text-stone-400 transition-color duration-300">
+          <a href="#" class=" group-hover:visible float-left no-underline">Company</a>
+        </li>
+  			<li class="hover:text-stone-400 transition-color duration-300">
+          <a href="#" class=" group-hover:visible float-left no-underline">Team</a>
+        </li>
+  			<li class="hover:text-stone-400 transition-color duration-300">
+          <a href="#" class=" group-hover:visible float-left no-underline">Careers</a>
+        </li>
+      </div>
+    </div>
+
+    <i class="fa fa-search border-2 p-1.5 h-8 w-8 relative right-4 bottom-1"></i>
+      </ul> 
+    </nav>
+
+
+
+
+
+
+    <!-- Slider -->
+    <div class="swiper my-10 relative">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper transform-x-4 animate-test" style=" max-height: 500px;">
+        <!-- Slides -->
+      <div class="swiper-slide"><img src="img/slider-01.jpg" alt="image1-slider" class="animate-test relative"> 
+   </div>
+        <div class="swiper-slide">	<img src="img/slider-02.jpg" alt="image2-slider" class="animate-test"></div>
+        <div class="swiper-slide"><img src="img/slider-03.jpg" alt="image3-slider" class="-mx-1 -my-0.5 animate-test" style="; height: 561px; width: 1920px; object-fit: cover; object-position: 50% 78%; transform: scaleX(1.01);"></div>
+      
+
+     <button class="z-2 absolute bottom-16 right-64 h-16 w-52 bg-white hover:bg-slate-400 hover:text-white transition ease-in-out transition: 900ms" style="transition: 800ms"> + de Détails</button>
+
+        <div class=" z-2 absolute  bottom-16 left-64 h-16 w-54 text-slate-100 leading-8">
+          <p class="uppercase">actuellement</p>
+           <p class="font-bold">Découvrez de nouveaux horizons</p>
+           <p class="scale-70">Un voyage de rêve pour vous</p></div>
+      </div>
+      
+
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev bg-slate-200 decoration-gray-300"></div>
+      <div class="swiper-button-next bg-slate-200 decoration-gray-300"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+
+
+        <!-- Section article -->
+     <section class="flex items-center justify-center gap-8">
+          <div class="grid gap-3 max-w-3xl mx-auto">
+            <div class="grid grid-cols-3 gap-3 h-15.5">
+              <!-- 3 images -->
+
+                <div class="aspect-square relative">
+                  <img src="img/category-1.jpg" class="z-1">
+                  <span class="absolute bg-white rounded-tr-full w-54  z-2 opacity-75 -mt-14">
+                    <h2 class="uppercase font-bold text-align-center pr-7 pl-1">destinations</h2>
+                    <p class=" text-sm font-light pl-1">populaires</p>
+                  </span>
+                </div>
+
+                <div class="aspect-square relative">
+                  <img src="img/category-2.jpg" class="z-1">
+                  <span class="absolute bg-white rounded-tr-full w-54  z-2 opacity-75  -mt-14">
+                    <h2 class="uppercase font-bold text-align-center pr-7 pl-1">inspiration</h2>
+                    <p class="text-sm font-light pr-4 pl-1">les dernieres destinations</p>
+                  </span>
+                </div>
+
+                <div class="aspect-square relative">
+                  <img src="img/category-3.jpg" class="z-1">
+                  <span class="absolute bg-white rounded-tr-full w-54  z-2 opacity-75  -mt-14">
+                    <h2 class="uppercase font-bold text-align-center pr-7">blog</h2>
+                    <p class="text-sm font-light pr-4 pl-1">témoignages de gens</p>
+                  </span>
+                </div>
+
+        </div>
+
+
+
+      
+      <!-- Monument article container  -->
+      <div class="flex max-w-4xl space-x-2 max-h-[1900px]" > <!-- Space X add a horizontal space between children -->
+        <!-- left side-->
+        <div class=" w-2/3 flex flex-col">  <!-- SECTION top/left article -->
+          <div class="">
+            <img src="img/insipaction.jpg" alt="monument-us"> 
+            <br>
+              <span class="text-blue-700 underline decoration-solid mx-1">En voyage</span>
+                  <div class="flex float-right gap-3 pr-2">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-pinterest"></i>
+                        <i class="fas fa-globe-asia"></i>
+                  </div>
+
+       <h2 class="text-black font-bold text-2xl mt-4 mb-3 mx-1"> Cyprum itidem bla bla bla bla bla bla</h2>
+
+       <i class="far fa-comments fa-xs pl-1"></i><span class="text-xs font-light pl-2 pr-1 pb-4">3 comments</span>
+       <i class="fas fa-eye fa-xs"></i><span class="text-sm font-light pl-2 pr-1 pb-4">122</span>
+       <i class="fas fa-user-tie fa-xs"></i><span class="text-sm font-light pl-1 pr-1 pb-4">admin</span>
+       <i class="far fa-calendar-alt fa-xs"></i><span class="text-sm font-light pl-1 pb-4 mb-6">23/12/2021</span>
+
+       <p class="font-light mt-2 mb-8"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+       tempor incididunt ut labore et dolore magna aliqua. 
+       </p>
+
+
+
+       <div class="border-double border-slate h-12 border-t-[8px] relative"><!-- Pas possible d'utiliser HR puisque ce n'est pas une balise fermante ou je peux mettre de position relative :(  -->
+              <button class="relative text-blue-700 uppercase border-2 border-gray-200 w-70 left-[38%] bottom-[56%] bg-white p-2 hover:bg-slate-400 transition-color duration-300  hover:text-white transition-color duration-300">Articles à lire
+              </button>
+        </div>
+          </div> <!-- section top/left article -->
+
+          <div class="flex flex-row items-center justify-between mb-10"><!-- Deuxieme partie SECTION d'article : 3 POSTS -->
+              <div class="basis-1/4 mx-2"> <!-- Container -->
+                  <img src="img/rel-post-01.jpg" alt="post1" class=" max-w-full max-h-full place-content-evenly"> <!-- 1er post -->
+                  <p class="text-blue-700 uppercase text-xs pt-2">
+                  inspiration</p>
+                  <h2 class="font-bold mt-2 "> Cyprum itidem epictum amictu</h2>
+                  <span class="text-xs font-light pr-1 pb-1">31/02/2021</span>
+              </div>
+
+              <div class="basis-1/4 mx-2">
+                  <img src="img/rel-post-02.jpg" alt="post2" class=" max-w-full max-h-full place-content-evenly"> <!-- 2eme post -->
+                  <p class="text-blue-700 uppercase text-xs pt-2">
+                  inspiration</p>
+                  <h2 class="font-bold mt-2 "> Cyprum itidem epictum amictu</h2>
+                  <span class="text-xs font-light pr-1 pb-1">31/02/2021</span>
+              </div>
+
+            <div class="basis-1/4 mx-2">
+                  <img src="img/rel-post-03.jpg" alt="post3" class=" max-w-full max-h-full place-content-evenly"> <!-- 3eme post -->
+                  <p class="text-blue-700 uppercase text-xs pt-2">
+                  inspiration</p>
+                  <h2 class="font-bold mt-2 "> Cyprum itidem epictum amictu</h2>
+                  <span class="text-xs font-light pr-1 pb-1">31/02/2021</span>
+            </div>
+          </div> <!-- Deuxieme partie SECTION d'article : 3 POSTS -->
+
+      <div class="flex flex-col">
+              <img src="img/tea-estate.png" alt="monument-somewhere-">  
+              <br>
+           
+              <span class="text-blue-700 uppercase underline decoration-solid mx-1 mb-3 mt-2 ">travel
+              </span>
+                  <div class="flex gap-3 pr-2 relative left-3/4 bottom-8"> <!-- Why Float right doesn't work on this parent element smh -->
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-pinterest"></i>
+                        <i class="fas fa-globe-asia"></i>
+                  </div>
+
+         <h2 class="text-black font-bold text-2xl mt-4 mb-3 mx-1"> Cyprum itidem bla bla bla bla bla bla</h2>
+         <div class="flex flex-row mb-2">
+                        <i class="far fa-comments fa-xs pl-1 pr-1"></i><span class="text-sm font-light -mt-2 pr-2">3 comments</span>
+                        <i class="fas fa-eye fa-xs pr-1"></i><span class="text-sm font-light -mt-2 pr-2">122</span>
+                        <i class="fas fa-user-tie fa-xs pr-1"></i><span class="text-sm font-light  -mt-2 pr-2">admin</span>
+                        <i class="far fa-calendar-alt fa-xs pr-1"></i><span class="text-sm font-light -mt-2 pr-2">23/12/2021</span>
+        </div>
+              <p class="font-light mt-2 mb-8"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. 
+             </p>
+      </div>
+
+
+      <div class="border-double border-slate h-12 border-t-[8px] relative"><!-- Pas possible d'utiliser la balise HR puisque ce n'est pas une balise fermante ou je peux mettre de position relative :(  -->
+              <button class="relative text-blue-700 uppercase border-2 border-gray-200 w-70 left-[39%] bottom-[56%] bg-white p-2 hover:bg-slate-400 transition-color duration-300  hover:text-white transition-color duration-300">Articles récents
+              </button>
+        </div>
+
+
+
+
+
+      <div class="flex flex-row items-center justify-between mb-10"><!-- TROISIEME partie SECTION d'article : +3 POSTS -->
+              <div class="basis-1/4 mx-2"> <!-- Container -->
+                  <img src="img/rel-post-04.jpg" alt="post4" class=" max-w-full max-h-full place-content-evenly"> <!-- 1er post -->
+                  <p class="text-blue-700 uppercase text-xs pt-2">
+                  inspiration</p>
+                  <h2 class="font-bold mt-2 "> Cyprum itidem epictum amictu</h2>
+                  <span class="text-xs font-light pr-1 pb-1">31/02/2021</span>
+              </div>
+
+              <div class="basis-1/4 mx-2">
+                  <img src="img/rel-post-05.jpg" alt="post5" class=" max-w-full max-h-full place-content-evenly"> <!-- 2eme post -->
+                  <p class="text-blue-700 uppercase text-xs pt-2">
+                  inspiration</p>
+                  <h2 class="font-bold mt-2 "> Cyprum itidem epictum amictu</h2>
+                  <span class="text-xs font-light pr-1 pb-1">31/02/2021</span>
+              </div>
+
+            <div class="basis-1/4 mx-2">
+                  <img src="img/rel-post-06.jpg" alt="post6" class=" max-w-full max-h-full place-content-evenly"> <!-- 3eme post -->
+                  <p class="text-blue-700 uppercase text-xs pt-2">
+                  inspiration</p>
+                  <h2 class="font-bold mt-2 "> Cyprum itidem epictum amictu</h2>
+                  <span class="text-xs font-light pr-1 pb-1">31/02/2021</span>
+            </div>
+
+          </div> <!-- Deuxieme partie SECTION d'article : 3 POSTS -->
+
+
+        <!--ADVERTISE  HORIZONTAL photo --> 
+        <div class="relative left-14 top-24"> <!-- Pourquoi l'element  en absolute se positionne par rapport au body et pas par rapport au container ici présent ??? -->
+              <img src="img/trekk.png.jpg" alt="advertise" class=" mt-4 mb-4 ml-24 " style="width:70%; height:50%">
+              <div class="bg-sky-900 absolute text-white -rotate-90 top-5 left-14 p-2 w-11" style="margin-bottom: -11.5px; margin-top: 0.29em;
+top: 0.7em;"><span class="text-[43%] relative right-2 bottom-1">ADVERTISE</span>
+              </div> 
+        </div>
+
+
+        <!-- Nouveau CONTAINER SUITE : LEFT CENTERED COLUMN / NEW WIDTH -->
+          <div class="relative z-10" style="width: 895px; top: 150px; height:4000px;"> <!-- Sur Tailwind la valeur du z-index se fait par dizaine -->
+              <!-- Image video -->
+              <img src="img/video.jpg">
+              <div class="mx-auto w-60 font-bold mt-2 my-4"> Cyprum itidem epictum amictu</div>
+              <div class="mx-auto w-80 font-light">
+                 <i class="far fa-comments fa-xs pl-1"></i><span class="text-xs font-light pl-2 pr-1 pb-4">3 comments</span>
+                 <i class="fas fa-eye fa-xs"></i><span class="text-sm font-light pl-2 pr-3 pb-4">122</span>
+                 <i class="fas fa-user-tie fa-xs"></i><span class="text-sm font-light pl-1 pr-3 pb-4">admin</span>
+                 <i class="far fa-calendar-alt fa-xs"></i><span class="text-sm font-light pl-1 pb-4 mb-3">23/12/2021</span>
+              </div>
+
+
+      
+              
+              <!--  6 articles -->
+              <div class="grid grid-rows-2 grid-cols-3 mx-5 my-8 mx-auto">
+                  <div class="basis-1/3">                             <!-- 1er post/6 -->
+                      <img src="img/rel-post-07.jpg" style="width:250px"> 
+                      <p class="text-blue-700 uppercase text-xs pt-2">
+                      inspiration</p>
+
+                       <div class="relative -right-8 bottom-5" style="right: -8em">  
+                            <i class="fab fa-facebook-f pr-2"></i>
+                            <i class="fab fa-instagram pr-2"></i>
+                            <i class="fab fa-twitter pr-2"></i>  
+                            <i class="fab fa-pinterest pr-2"></i>
+                            <i class="fab fa-github-alt pr-2"></i>
+                          </div>
+
+                      <h2 class="font-bold mt-1 "> Cyprum itidem epictum amictu</h2>
+                         <i class="fas fa-eye fa-xs text-gray-600"></i><span class="text-xs font-light pl-2 pr-1 pb-4 text-gray-600">122</span>
+                         <i class="fas fa-user-tie fa-xs text-gray-600"></i><span class="text-xs font-light pl-1 pr-1 pb-4 text-gray-600">admin</span>
+                         <i class="far fa-calendar-alt fa-xs text-gray-600"></i><span class="text-xs font-light pl-1 pb-4 mb-3 text-gray-600">23/12/2021</span>
+
+                        <div class="text-sm font-light mt-1 mb-4 text-gray-400" style="width: 300px;"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna </div>
+                  </div>
+
+                     <div class="basis-1/3">                                <!-- 2eme post/6 -->
+                      <img src="img/rel-post-08.jpg" style="width:250px">  
+                      <p class="text-blue-700 uppercase text-xs pt-2">
+                      inspiration</p>
+
+                       <div class="relative left-42 bottom-5 right-[-8em]">  
+                            <i class="fab fa-facebook-f pr-2"></i>
+                            <i class="fab fa-instagram pr-2"></i>
+                            <i class="fab fa-twitter pr-2"></i>  
+                            <i class="fab fa-pinterest pr-2"></i>
+                            <i class="fab fa-github-alt pr-2"></i>
+                          </div>
+
+                      <h2 class="font-bold mt-1"> Cyprum itidem epictum amictu</h2>
+                         <i class="fas fa-eye fa-xs text-gray-600"></i><span class="text-sm font-light pl-2 pr-3 pb-4 text-gray-600">122</span>
+                         <i class="fas fa-user-tie fa-xs text-gray-600"></i><span class="text-sm font-light pl-1 pr-3 pb-4 text-gray-600">admin</span>
+                         <i class="far fa-calendar-alt fa-xs text-gray-600"></i><span class="text-sm font-light pl-1 pb-4 mb-3 text-gray-600">23/12/2021</span>
+
+                        <div class="text-sm font-light mt-1 mb-4 text-gray-400" style="width: 300px;"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna. </div>
+                    </td>
+                     </div>
+
+                    <div class="basis-1/3">
+                      <img src="img/rel-post-09.jpg" style="width:250px">  <!-- 3em post/6 -->
+                      <p class="text-blue-700 uppercase text-xs pt-2">
+                      inspiration</p>
+
+                       <div class="relative bottom-5" style="right: -8em">  
+                            <i class="fab fa-facebook-f pr-2"></i>
+                            <i class="fab fa-instagram pr-2"></i>
+                            <i class="fab fa-twitter pr-2"></i>  
+                            <i class="fab fa-pinterest pr-2"></i>
+                            <i class="fab fa-github-alt pr-2"></i>
+                          </div>
+
+                      <h2 class="font-bold mt-1 "> Cyprum itidem epictum amictu</h2>
+                         <i class="fas fa-eye fa-xs text-gray-600"></i><span class="text-sm font-light pl-2 pr-3 pb-4 text-gray-600">122</span>
+                         <i class="fas fa-user-tie fa-xs text-gray-600"></i><span class="text-sm font-light pl-1 pr-3 pb-4 text-gray-600">admin</span>
+                         <i class="far fa-calendar-alt fa-xs text-gray-600"></i><span class="text-sm font-light pl-1 pb-4 mb-3 text-gray-600">23/12/2021</span>
+
+                        <div class="text-sm font-light mt-2 mb-4 text-gray-400" style="width: 300px;"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna </div>
+              </div>
+
+
+      
+                <div class="basis-1/3 flex-wrap"> <!-- Grille article -->
+                      <img src="img/rel-post-10.jpg" style="width:250px">  <!-- 4/6 -->
+                      <p class="text-blue-700 uppercase text-xs pt-2">
+                      inspiration</p>
+
+                       <div class="relative -right-8 bottom-5" style="right: -8em">  
+                            <i class="fab fa-facebook-f pr-2"></i>
+                            <i class="fab fa-instagram pr-2"></i>
+                            <i class="fab fa-twitter pr-2"></i>  
+                            <i class="fab fa-pinterest pr-2"></i>
+                            <i class="fab fa-github-alt pr-2"></i>
+                          </div>
+
+                      <h2 class="font-bold mt-1 "> Cyprum itidem epictum amictu</h2>
+                         <i class="fas fa-eye fa-xs text-gray-600"></i><span class="text-sm font-light pl-2 pr-3 pb-4 text-gray-600">122</span>
+                         <i class="fas fa-user-tie fa-xs text-gray-600"></i><span class="text-sm font-light pl-1 pr-3 pb-4 text-gray-600">admin</span>
+                         <i class="far fa-calendar-alt fa-xs text-gray-600"></i><span class="text-sm font-light pl-1 pb-4 mb-3 text-gray-600">23/12/2021</span>
+
+                        <div class="text-sm font-light mt-1 text-gray-400" style="width: 300px;"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna </div>
+                  </div>
+
+                     <div class="basis-1/3">
+                      <img src="img/rel-post-11.jpg" style="width:250px">  <!-- 5/6 -->
+                      <p class="text-blue-700 uppercase text-xs pt-2">
+                      inspiration</p>
+
+                       <div class="relative left-42 bottom-5" style="right: -8em">  
+                            <i class="fab fa-facebook-f pr-2"></i>
+                            <i class="fab fa-instagram pr-2"></i>
+                            <i class="fab fa-twitter pr-2"></i>  
+                            <i class="fab fa-pinterest pr-2"></i>
+                            <i class="fab fa-github-alt pr-2"></i>
+                          </div>
+
+                      <h2 class="font-bold mt-1 "> Cyprum itidem epictum amictu</h2>
+                         <i class="fas fa-eye fa-xs text-gray-600"></i><span class="text-sm font-light pl-2 pr-3 pb-4 text-gray-600">122</span>
+                         <i class="fas fa-user-tie fa-xs text-gray-600"></i><span class="text-sm font-light pl-1 pr-3 pb-4 text-gray-600">admin</span>
+                         <i class="far fa-calendar-alt fa-xs text-gray-600"></i><span class="text-sm font-light pl-1 pb-4 mb-3 text-gray-600">23/12/2021</span>
+
+                        <div class="text-sm font-light mt-1 text-gray-400" style="width: 300px;"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna </div>
+                    </td>
+                     </div>
+
+                    <div class="basis-1/3">
+                      <img src="img/rel-post-12.jpg" style="width:250px">  <!-- 6/6 -->
+                      <p class="text-blue-700 uppercase text-xs pt-2">
+                      inspiration</p>
+
+                       <div class="relative bottom-5" style="right: -8em">  
+                            <i class="fab fa-facebook-f pr-2"></i>
+                            <i class="fab fa-instagram pr-2"></i>
+                            <i class="fab fa-twitter pr-2"></i>  
+                            <i class="fab fa-pinterest pr-2"></i>
+                            <i class="fab fa-github-alt pr-2"></i>
+                          </div>
+
+                      <h2 class="font-bold mt-1 "> Cyprum itidem epictum amictu</h2>
+                         <i class="fas fa-eye fa-xs text-gray-600"></i><span class="text-sm font-light pl-2 pr-3 pb-4 text-gray-600">122</span>
+                         <i class="fas fa-user-tie fa-xs text-gray-600"></i><span class="text-sm font-light pl-1 pr-3 pb-4 text-gray-600">admin</span>
+                         <i class="far fa-calendar-alt fa-xs text-gray-600"></i><span class="text-sm font-light pl-1 pb-4 mb-3 text-gray-600">23/12/2021</span>
+
+                        <div class="text-sm font-light mt-1 text-gray-400" style="width: 300px;"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna </div>
+
+                         
+              </div>
+
+              
+             
+
+                
+                  <div class="relative left-[110%] top-[4em]">
+                    <a href="#" class="w-20 h-20 border-2 border-gray-500 bg-white p-2 mx-1 hover:bg-black  hover:text-white transition duration-150 ease-out hover:ease-in transition-400">&laquo;</a>
+                      <a href="#" class="w-20 h-20 border-2 border-gray-500 bg-white p-2 mx-1 hover:bg-black hover:text-white transition duration-150 ease-out hover:ease-in transition-400">1</a>
+                      <a href="#" class="w-20 h-20 border-2 border-gray-500 bg-white p-2 mx-1 hover:bg-black hover:text-white transition duration-150 ease-out hover:ease-in transition-400">2</a>
+                      <a href="#" class="w-20 h-20 border-2 border-gray-500 bg-white p-2 mx-1 hover:bg-black  hover:text-white transition duration-150 ease-out hover:ease-in transition-400">3</a>
+                    <a href="#" class="w-20 h-20 border-2 border-gray-500 bg-white p-2 mx-1 hover:bg-black hover:text-white transition duration-150 ease-out hover:ease-in transition-400">&raquo;</a>
+                    </div>
+              </div>
+
+              <div class="flex flex-row justify-center top-[4em] relative">Suivez vous sur les réseaux</div>
+              <div class="uppercase font-bold flex flex-row justify-center top-[4em] relative mb-32">instagram</div>
+
+
+              <!-- Gallerie d'images -->
+              <div class="flex flex-row flex w-[220px] absolute ml-[-270px] bottom-[-180px]">
+                <img src="img/instragram-01.jpg" alt="galeriephoto1">
+                <img src="img/instragram-02.jpg" alt="galeriephoto2">
+                <img src="img/instragram-03.jpg" alt="galeriephoto3">
+                <img src="img/instragram-04.jpg" alt="galeriephoto4">
+                <img src="img/instragram-05.jpg" alt="galeriephoto5">
+                <img src="img/instragram-06.jpg" alt="galeriephoto6">
+              </div> 
+          </div> <!-- Nouveau CONTAINER SUITE : LEFT CENTERED COLUMN / NEW WIDTH -->
+
+
+        </div> <!-- Fin de tout le bloc article -->
+
+
+
+        <!-- RIGHT COLUMN container -->
+        <div class="flex flex-col w-1/3 h-4/4 items-center relative justify-center overflow-y-hidden max-h-[1900px]">
+                    <img src="img/welcome-bg.png" style="position: relative; margin-bottom: 70em; top: 25em; width: 100%;"> <!-- ? Je n'arrive pas à deplacer l'image malgré que     je puisse le faire dans l'inspecteur ? Que ce soit en em ou en px -->
+                    <div class="uppercase relative font-bold text-lg top-[-39em] pt-2">bienvenue</div> <!-- Penser à tout reconvertir en em au lieu de laisser en PX -->
+                    <div class="z-1 absolute rounded-full w-[85px] h-[5.3em] top-[6em]" style="background-image: url('img/comment-post-01.jpg'); background-size: cover;">
+                    </div>
+          
+
+                    <p class="text-sm text-center mx-4 mt-1" style="position: relative; top:-50em;"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. </p>
+
+                    <!-- social links -->
+                    <div class="flex gap-4 mt-2 mb-10 relative top-[-43em] ">
+                      <i class="fab fa-facebook-f"></i>
+                      <i class="fab fa-instagram"></i>
+                      <i class="fab fa-twitter"></i>
+                      <i class="fab fa-pinterest"></i>
+                      <i class="fas fa-globe-asia"></i>
+                    </div>
+
+                  
+                    <!-- POST RIGHT COLUMN BAR -->
+                    <span class="text-blue-700 relative top-[-44em] pb-2 font-bold mr-24 pb-4">Article Récents</span>
+                    <img src="img/big-post.jpg" alt="article1-rightsidebar" class=" relative top-[-44em]" style="width: 100%;">
+                    <span class="relative top-[-49em] text-sm font-bold right-17 mx-1"> Et blablabla blabla blabla blabla blabla blabla blabla</span>
+                    <br>
+                    <span class="text-xs font-light text-gray-600 relative " style="right:7em; top: -57em">May,12, 2000</span> <!-- Probleme entre mon IDE et l'inspecteur je n'arrive qu'à placer dan l'attribut style et pas dans la class -->
+                    <br>
+
+                  
+                    <table class=" relative top-[-40em] border-b-2 border-gray-400"> 
+                      <tr>  <!-- 1er mini post -->
+                        <td>
+                          <img src="img/min-post-01.jpg" alt="image-post-1">
+                        </td>
+                        <td>
+                          <p class="text-sm font-bold ml-1">Nec sane haec sola pernicies orientelme</p>
+                          <p class="text-xs font-light text-gray-600 leading-5 ml-1">1 avril 2012</p>
+                        </td>
+                      </tr>
+
+                      <tr>  <!-- 2eme mini post -->
+                        <td>
+                        <img src="img/min-post-02.jpg" alt="image-post-2">
+                        </td>
+
+                        <td>
+                          <p class="text-sm font-bold ml-1">Nec sane haec sola pernicies orientelme</p>
+                          <p class="text-xs font-light text-gray-600 leading-5 ml-1">1 avril 2012</p>
+                        </td>
+                      </tr>
+                      
+                      <tr>  <!-- 3eme mini post -->
+                        <td>
+                        <img src="img/min-post-03.jpg" alt="image-post-3">
+                        </td>
+                        <td>
+                          <p class="text-sm font-bold ml-1">Nec sane haec sola pernicies orientelme</p>
+                          <p class="text-xs font-light text-gray-600 leading-5 ml-1">1 avril 2012</p>
+                        </td>
+                      </tr>
+
+
+
+                      <tr>  <!-- 4eme FAUX MINI POST : puisque je n'arrive pas à avoir de prise en main sur le positionnement du border b, j'ai crée une classe visibility none pour espacer les margins -->
+                        <td>
+                        <img src="img/min-post-03.jpg" alt="image-post-3" class="invisible">
+                        </td>
+                        <td>
+                          <p class="text-sm font-bold ml-1 invisible" style="">Nec sane haec sola pernicies orientelme</p>
+                          <p class="text-xs font-light text-gray-600 leading-5 ml-1 invisible">1 avril 2012</p>
+                        </td>
+                      </tr>
+                    </table>
+                    
+                   
+                    <!-- Newsletter -->
+                   <div class="relative top-[-37em]"> 
+                     <img src="img/newsletter-bg.jpg" alt="image-newsletter" class="relative grayscale-[70%] opacity-70">
+                     <form class=" absolute z-2 top-[5em] left-4">
+                          <p class="font-bold h-17 text-white text-3xl p-2 ">Souscrire à notre newsletter</p>
+                          <input type="email" name="email" placeholder="Votre email" class="p-2">
+
+                          <button class="bg-white p-2 mt-2 w-[14rem] hover:text-white transition-color duration-300 hover:bg-black transition-color duration-300">SOUSCRIRE
+                          </button>
+                     </form>
+                   </div>
+
+                   <!-- 2eme partie mini post TABLE -->
+                  <span class="relative text-blue-500 uppercase font-bold top-[-35.5em] right-[4em]">commentaires</span>
+
+                   <table class=" relative float-left top-[-34em] left-[0.1em]">
+                      <tr>
+                        <td colspan="1"><img src="img/comment-post-01.jpg" alt="image-mini-post4"></td>
+                        <td class=""><p class=" relative text-sm font-bold float-right leading-7 w-20 right-[7em]" style="">Nec sane haec sola pernicies </p></td>  
+                     </tr>
+                      <tr>
+                      <td colspan="2" class="font-light text-gray-600">Nec sane haec sola pernicies orientelme</td>
+                      </tr> 
+                       <tr>
+                        <td colspan="1"><img src="img/comment-post-02.jpg" alt="image-mini-post4"></td>
+                        <td class=""><p class=" relative text-sm font-bold float-right leading-7 w-20 right-[7em]" style="">Nec sane haec sola pernicies </p></td>  
+                      </tr>
+                      <tr>
+                        <td colspan="2" class="font-light text-gray-600">Nec sane haec sola pernicies orientelme</td>
+                     </tr>  
+                 </table> 
+         </div>  <!--// NOPE REAL container right column  actually I can't remember which one of those is the real closed closing tag of the left column or the right column-->   
+      </div><!--// container right COLUMN -->
+  </section>
+
+
+<!-- Footer -->
+  <footer class="relative max-h-screen" style="position: relative;top: 1540px; max-height:300px;">
+      <img src="img/footer.jpg" alt="background-footer" style="height: 300px;">
+      <div class="flex gap-4 mt-1  absolute left-3/4 bottom-[10em] text-white">
+                      <i class="fab fa-facebook-f"></i>
+                      <i class="fab fa-instagram"></i>
+                      <i class="fab fa-twitter"></i>
+                      <i class="fab fa-pinterest"></i>
+                      <i class="fas fa-globe-asia"></i>
+      </div>
+        <hr class="relative border-1 bottom-[8em] ml-[11em] mr-[11em]"> <!-- Pourquoi la propriété border me rajoute du margin bottom en bas de mon container ??????? -->
+       <p class=" absolute text-white bottom-[4em] ml-[11em]"> Copyright &copy; 2032</p>
+      <div class=" text-right absolute bottom-[5em] left-2/4 text-white text-sm uppercase ml-[9em]"> 
+          <a href="#" class="mr-4 hover:text-black ease-in-out duration-300">Mentions légales</a>
+          <a href="#" class="mr-4 hover:text-black ease-in-out duration-300">partenaires</a>
+          <a href="#" class="mr-4 hover:text-black ease-in-out duration-300">contact</a>
+      </div> 
+  </footer>  
+
+	</main>  
+</body>
+</html>
